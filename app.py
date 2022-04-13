@@ -5,7 +5,6 @@ from flask import jsonify
 from models import db, Users, Posts
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import login_user, logout_user, LoginManager, current_user
-from werkzeug.security import generate_password_hash, check_password_hash
 
 app = flask.Flask(__name__)
 
@@ -17,9 +16,6 @@ bp = flask.Blueprint(
     __name__,
     template_folder="./static/react",
 )
-
-
-
 
 load_dotenv(find_dotenv())
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
@@ -50,7 +46,6 @@ def signup():
     return flask.render_template(
         "signup.html", url=flask.url_for("bp.login")
     )
-
 
 @bp.route("/login", methods=["POST"])
 def login_post():
@@ -128,9 +123,6 @@ def forum():
             contentlist=contentlist,
         )
         
-    
-
-
 @app.route("/getinformation", methods=["GET", "POST"])
 def getinformation():
     revs = []
