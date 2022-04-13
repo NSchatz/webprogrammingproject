@@ -1,3 +1,4 @@
-flaskdotenv
+python-dotenv
 flask_sqlalchemy
 flask_login
+flask
