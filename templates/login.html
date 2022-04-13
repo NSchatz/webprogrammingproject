@@ -1,0 +1,28 @@
+<form method="POST" action="/login">
+    <div>
+        <div class="user-font">Username</div>
+        <input class="user-input" type="text" name="username" min="1"  maxlength="30" required>
+
+    </div>
+    <div class="login-padding">
+        <div class="pass-font">Password</div>
+        <input class="password-input" type="password" name="password" min="1"  maxlength="30" required>
+
+    </div>
+    <div class="button-padding">
+        <input class="submit-button" type="submit" value="Login">
+        
+    </div>
+</form>
+{% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <b>{{message}}</b>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+<div>
+    <span class="flavor-text">Don't have an account?</span>
+    <a href="{{url}}">Sign Up</a>
+    <label for=""></label>
+    <input type="text" name="username" min="1">
