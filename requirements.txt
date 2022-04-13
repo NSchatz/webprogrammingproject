@@ -2,3 +2,4 @@ python-dotenv
 flask_sqlalchemy
 flask_login
 flask
+psycopg2-binary
