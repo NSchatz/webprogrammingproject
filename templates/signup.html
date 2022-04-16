@@ -1,19 +1,17 @@
-<form method="POST" action="/signup">
-    <div>
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">
+</head>
+<div class="form">
+    <form method="POST" action="/signup"> 
         <div class="user-font">Username</div>
         <input class="user-input" type="text" name="username" autofocus="" min="1" maxlength="30" required>
-
-    </div>
-    <div class="signup-padding">
         <div class="pass-font">Password</div>
-        <input class="password-input" type="password" name="password" autofocus="" min="1" maxlength="30" required>
-
-    </div>
-    <div class="button-padding">
-        <input class="submit-button" type="submit" value="Sign up">
-    </div>
-</form>
+        <input class="password-input" type="text" name="password" autofocus="" min="1" maxlength="30" required>
+        <input class="button" type="Submit" value="Sign up">
+    </form>
 </div>
+
+
 
 <div>
 <span class="flavor-text">Already have an account?</span>

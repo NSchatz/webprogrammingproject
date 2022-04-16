@@ -18,19 +18,19 @@ function Description () {
                 </div> 
                 </Navbar>
             </div>
-            <div>
+            <div class="about">
                 <h1>Who are the Users of the site?</h1>
                 <p>The users of this website are miata owners that are looking to discuss and show their work. Specifcally miatas that are being turboed.</p>
             </div>
-            <div>
+            <div class="about">
                 <h1>What is it that you want your users to get out of using the site?</h1>
                 <p>I want the users of this website to have the ability to communicate with others users in the car community to help with a problem they have and show off what they are working on/want to do.</p>
             </div>
-            <div>
+            <div class="about">
                 <h1>What problem are you trying to solve for the users of the site?</h1>
                 <p>The problem I'm trying to solve is the problem of getting lost when putting a turbo in the miata. There are a lot of issues that can arise when putting a turbo in the miata and I want there to be a community that will help each other.</p>
             </div>
-            <div>
+            <div class="about">
                 <h1>What are the actions you want the users to take once they have used your site?</h1>
                 <p>I want the users to have the ability to login and begin creating posts that other users can view. Hopefully those posts are informative and helpful to other users of the website.</p>
             </div>

@@ -1,3 +1,6 @@
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">
+</head>
 <form method="POST" action="/login">
     <div>
         <div class="user-font">Username</div>
@@ -6,11 +9,11 @@
     </div>
     <div class="login-padding">
         <div class="pass-font">Password</div>
-        <input class="password-input" type="password" name="password" min="1"  maxlength="30" required>
+        <input class="password-input" type="text" name="password" min="1"  maxlength="30" required>
 
     </div>
     <div class="button-padding">
-        <input class="submit-button" type="submit" value="Login">
+        <input class="button" type="submit" value="Login">
         
     </div>
 </form>

@@ -58,6 +58,7 @@
   padding: 5% 10%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 .brand {
   position: absolute;
@@ -73,7 +74,15 @@
   display: block;
   
 }
-
+.about{
+  border: yellow 1px solid;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 5% 10%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

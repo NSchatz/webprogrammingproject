@@ -1,5 +1,39 @@
+
 *{
-    padding: 0;
-    margin: 0;
+    background-color: black;
+    color: yellow;
+}
+.form{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.button{
     
+}
+.flash{
+    text-align: center;
+    font-size: 15px;
+}
+input[type=text] {
+    border: 2px solid yellow;
+    border-radius: 4px;
+    padding: 10px 10px;
+}
+input[type=text]:focus {
+    border: 2px solid yellow;
+    border-radius: 4px;
+    padding: 10px 10px;
+    background-color: yellow;
+    color: black;
+}
+input[type=Submit] {
+    border: 2px solid yellow;
+    border-radius: 4px;
+    padding: 10px 10px;
+}
+input[type=Submit]:hover{
+    background-color: yellow;
+    color: black;
+    cursor: pointer;
 }
