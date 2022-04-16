@@ -5,10 +5,11 @@ import Home from './components/home';
 import About from './components/about';
 import CheckList from './components/checklist';
 import Description from './components/description';
-import Login from './components/login';
+import Posts from './components/posts';
 import './App.css';
- 
+
 class App extends Component {
+  
   render() {
     return (
        <Router>
@@ -20,7 +21,8 @@ class App extends Component {
                  <Route exact path='/about' element={< About />}></Route>
                  <Route exact path='/checklist' element={< CheckList />}></Route>
                  <Route exact path='/description' element={< Description />}></Route>
-                 <Route exact path='/login' element={< Login />}></Route>
+                 <Route exact path='/posts' element={< Posts />}></Route>
+                 
           </Routes>
           </div>
        </Router>

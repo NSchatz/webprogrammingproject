@@ -28,8 +28,11 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
 
-
 @bp.route("/")
+@bp.route("/about")
+@bp.route("/checklist")
+@bp.route("/description")
+@bp.route("/posts")
 def index():
     return flask.render_template("index.html")
 
@@ -92,17 +95,24 @@ def forum():
     titlelist = []
     contentlist = []
     userlist = []
-    p = Posts.query.filter_by(user=user).all()
+    idlist=[]
+    p = Posts.query.all()
+    
     for things in p:
         userlist.append(things.user)
         titlelist.append(things.title)
         contentlist.append(things.content)
+        idlist.append(things.id)
+        
     if flask.request.method == "POST":
         userlist.append(user)
         title = flask.request.form.get("title")
         titlelist.append(title)
         content = flask.request.form.get("content")
         contentlist.append(content)
+        last_item = Posts.query.order_by(Posts.id.desc()).first()
+        last = int(last_item.id) + 1
+        idlist.append(last)
         post = Posts(
             user=user, title=title, content=content
         )
@@ -112,6 +122,7 @@ def forum():
             "foruminput.html",
             length=len(userlist),
             userlist=userlist,
+            idlist=idlist,
             titlelist=titlelist,
             contentlist=contentlist,
         )
@@ -119,6 +130,7 @@ def forum():
             "foruminput.html",
             length=len(userlist),
             userlist=userlist,
+            idlist=idlist,
             titlelist=titlelist,
             contentlist=contentlist,
         )
@@ -126,20 +138,32 @@ def forum():
 @app.route("/getinformation", methods=["GET", "POST"])
 def getinformation():
     revs = []
-    user = current_user.username
     post = Posts.query.all()
-    
+    i=0
     for things in post:
         revs.append(
             {
+                "index": i,
                 "id": things.id,
                 "user": things.user,
                 "title": things.title,
                 "content": things.content,
             }
         )
+        i += 1
         
     return jsonify(revs)
+
+@app.route('/handle_data', methods=["GET", "POST"])
+def handle_data():
+    if flask.request.method == "POST":
+        id = flask.request.form.get('id')
+        
+        id1 = int(id)
+        print(id1)
+        Posts.query.filter_by(id=id1).delete()
+        db.session.commit()
+    return flask.redirect("/forum")
 
 @login_manager.user_loader
 def load_user(id):

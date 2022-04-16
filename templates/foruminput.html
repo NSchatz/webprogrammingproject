@@ -1,17 +1,33 @@
-<div>Welcome {{current_user.username}}!</div>
-<form method="POST" action="">
-    <label for="">Title</label>
-    <input type="text" name="title" min="1" required>
-    <label for="">Content</label>
-    <input type="text" name="content" min="1" required>
-    <input type="submit" value="Submit"><br><br>
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/forum.css') }}">
+    <title>Document</title>
+</head>
+<a href="{{ url_for('bp.index') }}">Back</a>
+<div class="main" >
+    <h1>Welcome {{current_user.username}}!</h1>
+</div>
+<div class='input'>
+    <form  method="POST" action="">
+        <label for="">Title</label>
+        <input class="box" type="text" name="title" min="1" required>
+        <label for="">Content</label>
+        <input class="box" type="text" name="content" min="1" required>
+        <input type="submit" value="Submit"><br><br>
+    </form>
+</div>
 
-   
+<h1 class='input'>Your Posts!</h1>
 {% for i in range(length) %}
     <div class="post">
-        <li class="User">User: {{userlist[i]}}</li>
-        <li class="Rating">Title: {{titlelist[i]}}</li>
-        <li class="Comment">Content: {{contentlist[i]}}</li>
+        <li class="list">User: {{userlist[i]}} </li>
+        <li class="list">Title: {{titlelist[i]}} </li>
+        <li class="list">Content: {{contentlist[i]}} </li>
+        <form method="POST" action="{{ url_for('handle_data') }}">
+            <button type="submit" name="id" value="{{idlist[i]}}">Delete</button>
+            
+        </form>
     </div>
 {% endfor %}
