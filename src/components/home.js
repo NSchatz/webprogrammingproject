@@ -8,15 +8,15 @@ function Home (){
     const images = [
         {
           original: 'https://s1.cdn.autoevolution.com/images/news/widebody-miata-cyberpunk-darth-vader-looks-like-a-race-car-146759_1.jpg',
-          thumbnail: 'https://s1.cdn.autoevolution.com/images/news/widebody-miata-cyberpunk-darth-vader-looks-like-a-race-car-146759_1.jpg',
+          thumbnail: '',
         },
         {
           original: 'https://www.motortrend.com/uploads/sites/25/2021/05/001-lm7-miata.jpg?fit=around%7C875:492',
-          thumbnail: 'https://picsum.photos/id/1015/250/150/',
+          thumbnail: '',
         },
         {
           original: 'https://static.carthrottle.com/workspace/uploads/posts/2015/12/9febfadfaa20b86839cf05e015c3844a.jpg',
-          thumbnail: 'https://picsum.photos/id/1019/250/150/',
+          thumbnail: '',
         },
       ];
     return (
@@ -33,6 +33,10 @@ function Home (){
               </div> 
             </Navbar>
             <ImageGallery showThumbnails={none} items={images} />
+            <div>
+              <h1>Welcome to TurboMiata!</h1>
+              <p>This is </p>
+            </div>
         </div>
     )
 }

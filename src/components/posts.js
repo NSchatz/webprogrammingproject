@@ -37,7 +37,8 @@ function Posts (){
           <div>
             {posts.map((item)=>
               <div class='post'>
-                <h1>{item.title} by {item.user}</h1><br />
+                <h1>{item.title}</h1>
+                <p>Created by {item.user}</p>
                 <p>{item.content}</p>
               </div>
               )}
