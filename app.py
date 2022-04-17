@@ -96,7 +96,7 @@ def forum():
     contentlist = []
     userlist = []
     idlist=[]
-    p = Posts.query.all()
+    p = Posts.query.filter_by(user=user).all()
     
     for things in p:
         userlist.append(things.user)

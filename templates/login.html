@@ -1,22 +1,18 @@
 <head>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">
 </head>
-<form method="POST" action="/login">
-    <div>
+<div class="form">
+    <form method="POST" action="/login"> 
         <div class="user-font">Username</div>
-        <input class="user-input" type="text" name="username" min="1"  maxlength="30" required>
-
-    </div>
-    <div class="login-padding">
+        <input class="user-input" type="text" name="username" autofocus="" min="1" maxlength="30" required>
         <div class="pass-font">Password</div>
-        <input class="password-input" type="text" name="password" min="1"  maxlength="30" required>
-
-    </div>
-    <div class="button-padding">
-        <input class="button" type="submit" value="Login">
-        
-    </div>
-</form>
+        <input class="password-input" type="text" name="password" autofocus="" min="1" maxlength="30" required><br>
+        <input class="button" type="Submit" value="Login"><br>
+        <span class="flavor-text">Don't have an account?</span>
+        <a href="{{url}}">Sign Up</a>
+    </form>
+    
+</div>
 {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     {% for message in messages %}
@@ -25,6 +21,5 @@
                 {% endif %}
             {% endwith %}
 <div>
-    <span class="flavor-text">Don't have an account?</span>
-    <a href="{{url}}">Sign Up</a>
+    
     

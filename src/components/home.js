@@ -33,9 +33,11 @@ function Home (){
               </div> 
             </Navbar>
             <ImageGallery showThumbnails={none} items={images} />
+            <br />
             <div>
               <h1>Welcome to TurboMiata!</h1>
-              <p>My goal with this website is to create a community for turbo miata enthusiasts that want to post with questions or talk about what it is the users are working on.</p>
+              <br />
+              <p>My goal with this website is to create a community for turbo miata enthusiasts that want to post with questions or talk about what it is the users are working on.</p><br /><br /><br />
             </div>
         </div>
     )

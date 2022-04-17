@@ -5,16 +5,17 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/forum.css') }}">
     <title>Document</title>
 </head>
+<br>
 <a href="{{ url_for('bp.index') }}">Back</a>
 <div class="main" >
     <h1>Welcome {{current_user.username}}!</h1>
 </div>
 <div class='input'>
     <form  method="POST" action="">
-        <label for="">Title</label>
-        <input class="box" type="text" name="title" min="1" required>
-        <label for="">Content</label>
-        <input class="box" type="text" name="content" min="1" required>
+        <label for="">Title:</label>
+        <input class="box" type="text" name="title" min="1" required><br>
+        <label for="">Content:</label>
+        <textarea id='abc'class="box" type="text" name="content" min="1" required></textarea><br>
         <input type="submit" value="Submit"><br><br>
     </form>
 </div>
@@ -24,7 +25,7 @@
     <div class="post">
         <li class="list">User: {{userlist[i]}} </li>
         <li class="list">Title: {{titlelist[i]}} </li>
-        <li class="list">Content: {{contentlist[i]}} </li>
+        <li class="list">Content: {{contentlist[i]}} </li> <br>
         <form method="POST" action="{{ url_for('handle_data') }}">
             <button type="submit" name="id" value="{{idlist[i]}}">Delete</button>
             

@@ -15,7 +15,7 @@ class Posts(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user = db.Column(db.String(100), nullable=False)
     title = db.Column(db.String(100), nullable=False)
-    content = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.String(1000), nullable=False)
     
 
     
